@@ -18,27 +18,90 @@
         color: #fff;
         padding:  2rem;
     }
+    header{
+        padding: 2rem;
+        text-align: center;
+        background: rgba(0,0,0,0.3 );
+    }
     h1 {
         font-size: 2rem;
         margin-bottom: 1rem;
         text-align: center;
     }
-    button {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        background-color: #ff6f61;
-        border: none;
-        border-radius: 5px;
-        color: #fff;
+    subtitulo{
+        color: #94a3b8;
+        font-size: 1.1rem;
+    }
+    .jogos{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 3rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .jogo-card{
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        border: 1px solid rgba(96,165,250,0.2);
+        transition: transform 0.3s ease,border-color 0.3s ease;
         cursor: pointer;
-        transition: background-color 0.3s ease;
     }
-    button:hover {
-        background-color: #ff4c3b;
-        transform: scale(1.05);
+    .jogo-car:hover{
+        transform: translateY(-8px);
+        border-color: #60a5fa;
+        background: rgba(96,165,250,0.1);
     }
-</style>
-<h1>Olá Bem-vindo ao site de games</h1>
-<button>click aqui</button>
+    .jogo-emoji{
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .jogo-nome{
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: #f0f9ff;
+    }
+    .jogo-desc{
+        color: #94a3b8;
+        font-size: 0.9rem;
+    }
+    footer{
+        text-align: center;
+        padding: 2rem;
+        color: #64748b;
+        font-size: 0.9rem;
+    }
+    </style>
+    </head>
+    <body>
+        <header>
+            <h1>Meu Site de Jogos</h1>
+            <p class="subtitulo">Projeto desenvolvido com HTML5, CSS3 e JavaScript</p>
 
+        </header>
+        <section class="jogos">
+            <div class="jogo-card">
+                <div class="jogos-emoji"></div>
+                <h3 class="jogo-nome">jogo da memória</h3>
+                <p class="jogo-desc">Encontre os pares de cartas iguais</p>
+                </div>
+                <div class="jogo-card">
+                    <div class="jogo-emoji">
+                </div>
+                <h3 class="jogo-nome">Pedra, Papel ou Tesoura</h3>
+                <p class="jogo-desc">Desafie o computador!</p>
+                </div>
+                <div class="jogo-card">
+                    <div class="jogo-emoji">
+                </div>
+                <h3 class="jogo-nome">Adivinhe o Número</h3>
+                <p class="jogo-desc">tente descobrir o número secreto</p>
+                </div>
+        </section>
+        <footer>© 2026 Rafael Cardoso Flor — Projeto de Estudos
+        </footer>
+    </body>
+    </html>
 
