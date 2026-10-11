@@ -1,1 +1,92 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra, Papel ou Tesoura</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            color: white;
+        }
+        .voltar { color: white; text-decoration: none; margin-bottom: 1rem; opacity: 0.8; }
+        .voltar:hover { opacity: 1; }
+        h1 { margin-bottom: 2rem; }
+        .escolhas { display: flex; gap: 1.5rem; margin: 2rem 0; }
+        .escolha {
+            font-size: 3rem;
+            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .escolha:hover { transform: scale(1.1); }
+        .resultado {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .placar { margin-top: 1rem; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="voltar">← Voltar</a>
+    <h1>✊✌️🖐️ Pedra, Papel ou Tesoura</h1>
+    
+    <div class="escolhas">
+        <button class="escolha" onclick="jogar('pedra')">✊</button>
+        <button class="escolha" onclick="jogar('papel')">🖐️</button>
+        <button class="escolha" onclick="jogar('tesoura')">✌️</button>
+    </div>
+
+    <div class="resultado">
+        <p id="mensagem">Escolha a sua jogada!</p>
+        <div class="placar">
+            <p>Você: <span id="pontos-jogador">0</span></p>
+            <p>Computador: <span id="pontos-pc">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        let pontosJogador = 0;
+        let pontosPc = 0;
+        const opcoes = ['pedra', 'papel', 'tesoura'];
+
+        function jogar(escolhaJogador) {
+            const escolhaPc = opcoes[Math.floor(Math.random() * 3)];
+            let mensagem = '';
+
+            if (escolhaJogador === escolhaPc) {
+                mensagem = `Empate! Você escolheu ${escolhaJogador} e o PC também ${escolhaPc}`;
+            } else if (
+                (escolhaJogador === 'pedra' && escolhaPc === 'tesoura') ||
+                (escolhaJogador === 'papel' && escolhaPc === 'pedra') ||
+                (escolhaJogador === 'tesoura' && escolhaPc === 'papel')
+            ) {
+                pontosJogador++;
+                mensagem = `🎉 Você ganhou! ${escolhaJogador} vence ${escolhaPc}`;
+            } else {
+                pontosPc++;
+                mensagem = `😢 Você perdeu! ${escolhaPc} vence ${escolhaJogador}`;
+            }
+
+            document.getElementById('mensagem').textContent = mensagem;
+            document.getElementById('pontos-jogador').textContent = pontosJogador;
+            document.getElementById('pontos-pc').textContent = pontosPc;
+        }
+    </script>
+</body>
+</html>
+
+
