@@ -1,107 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projeto de games</title>
-<style>
-    * {margin:0; padding: 0; box-sizing: border-box;
-    }
-     body{
-        font-family: Arial, Helvetica, sans-serif; 
-        background: linear-gradient(135deg, #1e3a5f, #2d5a87);
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        color: #fff;
-        padding:  2rem;
-    }
-    header{
-        padding: 2rem;
-        text-align: center;
-        background: rgba(0,0,0,0.3 );
-    }
-    h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-    subtitulo{
-        color: #94a3b8;
-        font-size: 1.1rem;
-    }
-    .jogos{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        padding: 3rem 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    .jogo-card{
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-        padding: 2rem;
-        text-align: center;
-        border: 1px solid rgba(96,165,250,0.2);
-        transition: transform 0.3s ease,border-color 0.3s ease;
-        cursor: pointer;
-    }
-    .jogo-car:hover{
-        transform: translateY(-8px);
-        border-color: #60a5fa;
-        background: rgba(96,165,250,0.1);
-    }
-    .jogo-emoji{
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-    .jogo-nome{
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-        color: #f0f9ff;
-    }
-    .jogo-desc{
-        color: #94a3b8;
-        font-size: 0.9rem;
-    }
-    footer{
-        text-align: center;
-        padding: 2rem;
-        color: #64748b;
-        font-size: 0.9rem;
-    }
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site de Jogos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitulo {
+            opacity: 0.9;
+        }
+        .jogos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            max-width: 1200px;
+        }
+        .jogo-card {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            width: 280px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        .jogo-card:hover {
+            transform: translateY(-8px);
+            border-color: #93c5fd;
+            background: rgba(255,255,255,0.15);
+        }
+        .jogo-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .jogo-nome {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .jogo-desc {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        footer {
+            margin-top: 3rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
     </style>
-    </head>
-    <body>
-        <header>
-            <h1>Meu Site de Jogos</h1>
-            <p class="subtitulo">Projeto desenvolvido com HTML5, CSS3 e JavaScript</p>
+</head>
+<body>
+    <header>
+        <h1>🎮 Meu Site de Jogos</h1>
+        <p class="subtitulo">Projeto desenvolvido com HTML5, CSS3 e JavaScript</p>
+    </header>
 
-        </header>
-        <section class="jogos">
-            <div class="jogo-card">
-                <div class="jogos-emoji"></div>
-                <h3 class="jogo-nome">jogo da memória</h3>
-                <p class="jogo-desc">Encontre os pares de cartas iguais</p>
-                </div>
-                <div class="jogo-card">
-                    <div class="jogo-emoji">
-                </div>
-                <h3 class="jogo-nome">Pedra, Papel ou Tesoura</h3>
-                <p class="jogo-desc">Desafie o computador!</p>
-                </div>
-                <div class="jogo-card">
-                    <div class="jogo-emoji">
-                </div>
-                <h3 class="jogo-nome">Adivinhe o Número</h3>
-                <p class="jogo-desc">tente descobrir o número secreto</p>
-                </div>
-        </section>
-        <footer>© 2026 Rafael Cardoso Flor — Projeto de Estudos
-        </footer>
-    </body>
-    </html>
+    <div class="jogos-container">
+        <a href="memoria.html" class="jogo-card">
+            <div class="jogo-emoji">🧠</div>
+            <div class="jogo-nome">Jogo da Memória</div>
+            <div class="jogo-desc">Encontre os pares de cartas iguais</div>
+        </a>
+
+        <a href="pedra-papel-tesoura.html" class="jogo-card">
+            <div class="jogo-emoji">✊✌️🖐️</div>
+            <div class="jogo-nome">Pedra, Papel ou Tesoura</div>
+            <div class="jogo-desc">Desafie o computador!</div>
+        </a>
+
+        <a href="adivinhe-numero.html" class="jogo-card">
+            <div class="jogo-emoji">🔢</div>
+            <div class="jogo-nome">Adivinhe o Número</div>
+            <div class="jogo-desc">Tente descobrir o número secreto</div>
+        </a>
+    </div>
+
+    <footer>
+        © 2026 Rafael Cardoso Flor — Projeto de Estudos
+    </footer>
+</body>
+</html>
 
